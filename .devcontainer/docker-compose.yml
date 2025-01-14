@@ -1,0 +1,13 @@
+---
+version: '3'
+services:
+  # The service name. expect it to appear as containername-username.codeanyapp.com,
+  # e.g.: chase-us-web-MYUSERNAME.codeanyapp.com
+  # ref.: https://codeanywhere.com/blog/ssl-and-friendly-preview-url-for-all
+  chase-us-web:
+    build: ./
+    ports:
+      - 8080:80
+    volumes:
+      # Mount the `webapp` from the repo inside /app of the container
+      - ../webapp:/app
