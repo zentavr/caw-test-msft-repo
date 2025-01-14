@@ -7,7 +7,11 @@ services:
   chase-us-web:
     build: ./
     ports:
-      - 8080:80
+      - 1080:80
     volumes:
       # Mount the `webapp` from the repo inside /app of the container
       - ../webapp:/app
+    security_opt:
+      - 'no-new-privileges=true'
+    privileged: false
+

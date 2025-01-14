@@ -19,5 +19,6 @@ RUN echo "Adding the group" && \
 # Copy servers.conf virtualhost
 COPY --chown=root nginx.conf.d/website.conf /opt/bitnami/nginx/conf/server_blocks/website.conf
 
-# Switch back to non-priv user
-USER ${APP_USER}
+# Switch back to non-priv user (in the base container we have: uid=1001 gid=0(root) groups=0(root))
+USER ${APP_USER}:0
+
