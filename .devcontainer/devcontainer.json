@@ -1,5 +1,5 @@
 {
-    "name": "hello-us",
+    "name": "chase-us",
     "dockerComposeFile": "docker-compose.yml",
 	"service": "hello-us-web",
     "workspaceFolder": "/app",
