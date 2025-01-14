@@ -2,9 +2,9 @@
 version: '3'
 services:
   # The service name. expect it to appear as containername-username.codeanyapp.com,
-  # e.g.: hello-us-web-MYUSERNAME.codeanyapp.com
+  # e.g.: chase-us-web-MYUSERNAME.codeanyapp.com
   # ref.: https://codeanywhere.com/blog/ssl-and-friendly-preview-url-for-all
-  hello-us-web:
+  chase-us-web:
     build: ./
     ports:
       - 8080:80
