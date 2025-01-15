@@ -7,6 +7,10 @@
     },
     "workspaceFolder": "/app",
     "remoteUser": "vscode",
+    "containerEnv": {
+      // Tell VS Code server to install in /home/appuser/.vscode-server
+      "VSCODE_AGENT_FOLDER": "/.vscode/.vscode-server"
+    },
     "forwardPorts": [
       "chase-us-web:1080",
       "chase-us-web:8080"

@@ -6,8 +6,10 @@ services:
   # ref.: https://codeanywhere.com/blog/ssl-and-friendly-preview-url-for-all
   chase-us-web:
     build:
-      context: ..
-      dockerfile: .devcontainer/Dockerfile
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - VSCODE_AGENT_FOLDER=/.vscode/.vscode-server
     ports:
       - 1080:80
     volumes:
@@ -16,7 +18,3 @@ services:
     security_opt:
       - 'no-new-privileges=true'
     privileged: false
-
-volumes:
-  vscode:
-    external: true
