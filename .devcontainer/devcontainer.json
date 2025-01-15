@@ -1,7 +1,7 @@
 {
     "name": "chase-us",
     "dockerComposeFile": "docker-compose.yml",
-	"service": "chase-us-web",
+    "service": "chase-us-web",
     "workspaceFolder": "/app",
     "remoteUser": "vscode",
     "forwardPorts": [80,1080]
