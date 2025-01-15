@@ -3,5 +3,6 @@
     "dockerComposeFile": "docker-compose.yml",
 	"service": "chase-us-web",
     "workspaceFolder": "/app",
-    "remoteUser": "vscode"
+    "remoteUser": "vscode",
+    "forwardPorts": [80,1080]
 }
