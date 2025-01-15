@@ -8,11 +8,12 @@ ARG APP_GID=1001
 
 USER root
 
-#add vscode user
-RUN echo "Adding the group" && \
+RUN echo "Installing cron" && \
+    install_packages ca-certificates curl && \
+    echo "Adding the group" && \
     addgroup --gid ${APP_GID} ${APP_GROUP} && \
     echo "Adding the user" && \
-    useradd --home-dir ${APP_ROOT} --shell /bin/bash --uid ${APP_UID} --gid ${APP_GID} ${APP_USER} && \
+    useradd --create-home --shell /bin/bash --uid ${APP_UID} --gid ${APP_GID} ${APP_USER} && \
     echo "Adding user to the additional groups" && \
     usermod -aG www-data ${APP_USER}
      
@@ -21,4 +22,3 @@ COPY --chown=root nginx.conf.d/website.conf /opt/bitnami/nginx/conf/server_block
 
 # Switch back to non-priv user (in the base container we have: uid=1001 gid=0(root) groups=0(root))
 USER ${APP_USER}:0
-

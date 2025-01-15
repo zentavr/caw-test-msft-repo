@@ -1,11 +1,13 @@
 ---
-version: '3'
+version: '3.8'
 services:
   # The service name. expect it to appear as containername-username.codeanyapp.com,
   # e.g.: chase-us-web-MYUSERNAME.codeanyapp.com
   # ref.: https://codeanywhere.com/blog/ssl-and-friendly-preview-url-for-all
   chase-us-web:
-    build: ./
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
     ports:
       - 1080:80
     volumes:
@@ -15,3 +17,6 @@ services:
       - 'no-new-privileges=true'
     privileged: false
 
+volumes:
+  vscode:
+    external: true

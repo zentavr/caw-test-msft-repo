@@ -2,7 +2,13 @@
     "name": "chase-us",
     "dockerComposeFile": "docker-compose.yml",
     "service": "chase-us-web",
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
     "workspaceFolder": "/app",
     "remoteUser": "vscode",
-    "forwardPorts": [80,1080]
+    "forwardPorts": [
+      "chase-us-web:1080",
+      "chase-us-web:8080"
+    ]
 }
